@@ -1,0 +1,187 @@
+/* Reset some default browser styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styles */
+
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow-x: hidden;
+}
+/* Header styles */
+header {
+    background: #d4b367;
+    color: #ffffff;
+    padding: 10px 20px;
+    text-align: center;
+}
+
+/* Navigation styles */
+nav {
+    background: #35424a;
+    padding: 10px;
+}
+
+nav a {
+    color: #ffffff;
+    text-decoration: none;
+    margin: 0 15px;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+/* Main content styles */
+main {
+    padding: 20px;
+}
+
+/* Card styles for content sections */
+.card {
+    background: #ffffff;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin: 20px 0;
+    padding: 15px;
+}
+
+/* Button styles */
+button {
+    background-color: #35424a;
+    color: #ffffff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0a0a0a;
+}
+
+/* Footer styles */
+footer {
+    text-align: center;
+    padding: 10px;
+    background: #090909;
+    color: #ffffff;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+body, html {
+    overflow-y: auto;
+    scroll-behavior: smooth; /* Permet le défilement vertical */
+}
+
+.content {
+    min-height: 100vh; /* Assure que chaque page a une hauteur suffisante */
+    padding: 20px;
+    position: relative;
+    z-index: 1; /* Place le contenu au-dessus du background */
+}
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background-image: url('https://img.freepik.com/photos-gratuite/vetements-mode-cintres-au-salon_1153-5492.jpg'); /* Chemin de votre image */
+    background-size: cover; /* L'image couvre toute la zone */
+    background-position: center; /* Centrer l'image */
+    background-repeat: no-repeat; /* Ne pas répéter l'image */
+    background-attachment: fixed; /* Rendre le fond fixe lors du défilement */
+}
+
+/* Optionnel : Appliquer un filtre ou une couleur d'overlay */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Overlay noir semi-transparent */
+    z-index: -1; /* Placer derrière le contenu */
+}
+
+/* Contenu principal */
+.content {
+    position: relative; /* S'assurer que le contenu est bien positionné par rapport au fond */
+    z-index: 1; /* Placer le contenu au-dessus de l'image de fond */
+    color: #fff; /* Couleur du texte pour une bonne visibilité */
+    padding: 20px;
+}
+/* Section Styling */
+.about-section {
+     /* Fond gris clair */
+    color: #333; /* Couleur principale du texte */
+    padding: 3rem 1rem; /* Marges internes pour espacer la section */
+    text-align: center; /* Centrer le contenu */
+}
+
+.about-section .section-title {
+    font-size: 2.5rem; /* Taille du titre principale */
+    font-weight: bold; /* Texte en gras */
+    margin-bottom: 1.5rem; /* Espacement sous le titre */
+    color: #f54242; /* Couleur rouge pour correspondre à SamShop */
+}
+
+.about-section .section-description {
+    font-size: 1.2rem; /* Taille du texte */
+    line-height: 1.8; /* Hauteur de ligne pour améliorer la lisibilité */
+    max-width: 800px; /* Limite la largeur pour un meilleur design */
+    margin: 0 auto; /* Centrer horizontalement */
+    color: #555; /* Couleur du texte subtile */
+}
+
+/* Styling des fonctionnalités */
+.about-section .features {
+    display: flex; /* Activer Flexbox */
+    justify-content: center; /* Centrer les éléments */
+    flex-wrap: wrap; /* Permet d'aller sur plusieurs lignes si nécessaire */
+    margin-top: 2rem; /* Espace au-dessus des fonctionnalités */
+    gap: 2rem; /* Espacement entre les éléments */
+}
+
+.about-section .feature-item {
+    flex: 1 1 200px; /* Largeur minimale et responsive */
+    max-width: 250px; /* Largeur maximale pour chaque fonctionnalité */
+    text-align: center; /* Centrer le texte */
+    margin: 0 1rem; /* Marges horizontales */
+}
+
+.about-section .feature-item i {
+    font-size: 3rem; /* Taille des icônes */
+    color: #f54242; /* Couleur rouge pour correspondre à SamShop */
+    margin-bottom: 0.5rem; /* Espace sous l'icône */
+}
+
+.about-section .feature-item h4 {
+    font-size: 1.5rem; /* Taille du titre des fonctionnalités */
+    margin: 0.5rem 0; /* Espacement autour du titre */
+    color: #333; /* Couleur du titre */
+}
+
+.about-section .feature-item p {
+    font-size: 1rem; /* Taille du texte descriptif */
+    color: #666; /* Couleur subtile */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .about-section .features {
+        flex-direction: column; /* Les éléments s'empilent verticalement */
+        gap: 1rem; /* Espacement réduit entre les éléments */
+    }
+}

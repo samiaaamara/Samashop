@@ -1,0 +1,204 @@
+
+<body><header>
+    <nav class="navbar navbar-expand-lg navbar-light nav-yellow border-bottom border-top p-0">
+        <div class="container">
+            <!-- Logo -->
+            <a class="navbar-brand fs-4 fw-bold" routerLink="/products">
+                <i class="fa fa-cart-shopping fs-4" style="color: #f54242;"></i>
+                <span class="textBlur">Samshop</span>
+            </a>
+  
+            <!-- Toggle Button for Mobile -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMenu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+  
+            <!-- Navigation Links -->
+            <div class="collapse navbar-collapse" id="navbarMenu">
+                <ul class="navbar-nav ms-auto text-center">
+                    <!-- Dropdown: Home -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle fw-semibold text-uppercase text-danger" href="#" id="homeDropdown" role="button" data-bs-toggle="dropdown">
+                            Home
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="" [routerLink]="['/dress']" [fragment]="'dress'" routerLinkActive="active">Dress</a></li>
+                            <li><a class="dropdown-item" href="" [routerLink]="['/shoes']" [fragment]="'shoes'" routerLinkActive="active">Shoes</a></li>
+                            <li><a class="dropdown-item" href="" [routerLink]="['/jacket']" [fragment]="'jacket'" routerLinkActive="active">Jacket</a></li>
+                            <li><a class="dropdown-item" href="" [routerLink]="['/coat']" [fragment]="'coat'" routerLinkActive="active">Coat</a></li>
+                          </ul>
+                    </li>
+  
+                    <!-- Dropdown: Pages -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle fw-semibold text-uppercase text-black" href="#" id="pagesDropdown" role="button" data-bs-toggle="dropdown">
+                            Pages
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">About Us</a></li>
+                            <li><a class="dropdown-item" href="#">Contact Us</a></li>
+                            <li><a class="dropdown-item" href="#">Terms and Conditions</a></li>
+                        </ul>
+                    </li>
+  
+                    <!-- Search Icon -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <i class="fa-solid fa-magnifying-glass fs-5"></i>
+                        </a>
+                    </li>
+  
+                    <!-- Cart Dropdown -->
+                    <!-- Cart Dropdown -->
+<li class="nav-item dropdown">
+    <a [routerLink]="['/checkout']" [fragment]="'checkout'" class="nav-link dropdown-toggle" href="#" id="cartDropdown" role="button" data-bs-toggle="dropdown">
+        <i class="fa fa-cart-shopping fs-5"></i>
+    </a>
+    
+</li>
+
+                    <!-- User Dropdown -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-bs-toggle="dropdown">
+                            <i class="fa fa-user fs-5"></i>
+                        </a>
+                        <ul class="dropdown-menu" style="left: -50px;">
+                            <ng-container *ngIf="!loggedObj.custId">
+                                <li>
+                                    <div class="d-flex justify-content-evenly mt-2">
+                                        <button class="btn btn-danger rounded-0 px-3" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight">Login</button>
+                                             </div>
+                                </li>
+                            </ng-container>
+                            <ng-container *ngIf="loggedObj.custId">
+                                <li class="text-center">{{ loggedObj.name }}</li>
+                            </ng-container>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+  </header>
+  <main>
+    
+    
+    <!-- Section À propos -->
+    <section class="about-section py-5">
+      <div class="container text-center">
+        <h2 class="section-title">Welcome to SamShop</h2>
+        <p class="section-description">
+          Discover the latest trends in fashion with SamShop, your one-stop destination for stylish dresses, trendy shoes, cozy jackets, and elegant coats. 
+          We bring you quality products at the best prices, ensuring that you look great while staying within your budget.
+        </p>
+        <div class="features d-flex justify-content-center flex-wrap mt-4">
+          <div class="feature-item">
+            <i class="fa-solid fa-truck-fast"></i>
+            <h4>Fast Delivery</h4>
+            <p>Get your orders delivered quickly and reliably.</p>
+          </div>
+          <div class="feature-item">
+            <i class="fa-solid fa-tag"></i>
+            <h4>Best Prices</h4>
+            <p>Affordable prices without compromising on quality.</p>
+          </div>
+          <div class="feature-item">
+            <i class="fa-solid fa-headset"></i>
+            <h4>24/7 Support</h4>
+            <p>We’re here to assist you anytime, anywhere.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  </body>
+  <div class="content">
+    <router-outlet></router-outlet>
+    <div class="offcanvas offcanvas-end m-5" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+        <div class="offcanvas-header">
+            <h5 id="offcanvasRightLabel">Sign In</h5>
+            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <section class="ftco-section">
+                <div class="container">
+    
+                    <div class="row ">
+                        <div class="col-md-7 col-lg-12">
+                            <div class="wrap">
+                                <div class="img" style="background-image: url(images/bg-1.jpg);"></div>
+                                <div class="login-wrap ">
+    
+                                    <form action="#" class="signin-form">
+                                        <div class="form-group mt-3">
+                                            <input type="text" name="UserName" class="form-control" required>
+                                            <label class="form-control-placeholder" for="username">Username</label>
+                                        </div>
+                                        <div class="form-group mt-4">
+                                            <input id="password-field"  name="UserPassword" type="password" class="form-control" required>
+                                            <label class="form-control-placeholder" for="password">Password</label>
+                                            <span toggle="#password-field"
+                                                class="fa fa-fw fa-eye field-icon toggle-password"></span>
+                                        </div>
+                                        <div class="form-group">
+                                            <button type="button"
+                                                class=" my-4 form-control btn btn-primary rounded submit px-3">Sign
+                                                In</button>
+                                        </div>
+                                        <div class="form-group d-md-flex">
+                                            <div class="w-50 text-left">
+                                                <label class="checkbox-wrap checkbox-primary mb-0">Remember Me
+                                                    <input type="checkbox" checked>
+                                                    <span class="checkmark"></span>
+                                                </label>
+                                            </div>
+                                            <div class="w-50 text-md-right">
+                                                <a href="#">Forgot Password</a>
+                                            </div>
+                                        </div>
+                                    </form>
+                                    <p class="text-center mt-4">Not a member? <a data-toggle="tab" href="#signup">Sign
+                                            Up</a></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+    
+        </div>
+    </div>
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Register</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body ">
+                    <div class="container">
+                        <div class="row"> 
+                            <div class="col-12 my-2">
+                                <input type="text" class="form-control">
+                                <label for="">Set Username</label>
+                            </div>
+                            <div class="col-12 my-2">
+                                <input type="password"  class="form-control">
+                                <label for="">Set Password</label>
+                            </div> 
+                            <div class="col-12 my-2">
+                                <input type="number" class="form-control">
+                                <label for="">Conatct Number</label>
+                            </div>  
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Register</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
